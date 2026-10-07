@@ -1,0 +1,24 @@
+{% extends "base.html" %}
+{% block content %}
+<div class="toolbar">
+  <input id="q" placeholder="🔍 Search name or ID">
+  <select id="dept"></select>
+  <label>Date <input type="date" id="date"></label>
+  <button class="btn primary" onclick="openStudentForm()">+ Add Student</button>
+</div>
+<div class="panel table-wrap">
+  <table>
+    <thead><tr><th>Student ID</th><th>Name</th><th>Department</th><th>Date</th><th>Status</th><th>Attendance %</th><th>Actions</th></tr></thead>
+    <tbody id="tbody"></tbody>
+  </table>
+</div>
+<div class="modal" id="stuModal"><div class="modal-box">
+  <h3 id="stuTitle">Add Student</h3>
+  <label>Student ID</label><input id="f_id">
+  <label>Name</label><input id="f_name">
+  <label>Department</label><input id="f_dept" placeholder="e.g. CSE">
+  <label>Email (optional)</label><input id="f_email" type="email">
+  <div class="row"><button class="btn primary" onclick="saveStudent()">Save</button>
+  <button class="btn" onclick="closeModal('stuModal')">Cancel</button></div>
+</div></div>
+{% endblock %}

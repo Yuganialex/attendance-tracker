@@ -1,0 +1,14 @@
+{% extends "base.html" %}
+{% block content %}
+<div class="toolbar">
+  <input id="q" placeholder="🔍 Search name or ID">
+  <select id="dept"></select>
+  <label>Date <input type="date" id="date"></label>
+</div>
+<div class="panel table-wrap">
+  <table>
+    <thead><tr><th>Student ID</th><th>Name</th><th>Department</th><th>Date</th><th>Status</th><th>Attendance %</th><th>Mark</th></tr></thead>
+    <tbody id="tbody"></tbody>
+  </table>
+</div>
+{% endblock %}

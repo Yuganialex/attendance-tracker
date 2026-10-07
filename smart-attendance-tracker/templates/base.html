@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>{{ title }} | Smart Attendance Tracker</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body data-page="{{ page }}">
+  <aside class="sidebar" id="sidebar">
+    <div class="brand">🎓 SmartAttend</div>
+    <nav>
+      {% for p, label, icon in [('dashboard','Dashboard','📊'),('students','Students','👥'),('scan','Scan ID Card','📷'),('attendance','Attendance','📝'),('reports','Reports','📈')] %}
+      <a href="/{{ p }}" class="{{ 'active' if page == p }}">{{ icon }} {{ label }}</a>
+      {% endfor %}
+    </nav>
+    <a href="/logout" class="logout">🚪 Logout</a>
+  </aside>
+  <div class="main">
+    <header class="topbar">
+      <button id="menuBtn" aria-label="Menu">☰</button>
+      <h1>{{ title }}</h1>
+      <div class="user">👤 {{ session.user }}</div>
+    </header>
+    <section class="content">{% block content %}{% endblock %}</section>
+  </div>
+  <div id="toast"></div>
+  <div class="modal" id="histModal"><div class="modal-box">
+    <h3 id="histTitle">History</h3><div id="histBody" class="hist"></div>
+    <button class="btn" onclick="closeModal('histModal')">Close</button>
+  </div></div>
+  {% block scripts %}{% endblock %}
+  <script src="{{ url_for('static', filename='js/app.js') }}"></script>
+</body>
+</html>

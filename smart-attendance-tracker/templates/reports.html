@@ -1,0 +1,15 @@
+{% extends "base.html" %}
+{% block content %}
+<div class="grid2">
+  <div class="panel"><h3>Daily attendance (last 14 days)</h3><canvas id="daily"></canvas></div>
+  <div class="panel"><h3>Monthly attendance %</h3><canvas id="monthly"></canvas></div>
+</div>
+<div class="panel table-wrap">
+  <h3>Student-wise report</h3>
+  <table>
+    <thead><tr><th>Student ID</th><th>Name</th><th>Department</th><th>Present</th><th>Absent</th><th>On Duty</th><th>Attendance %</th></tr></thead>
+    <tbody id="rbody"></tbody>
+  </table>
+</div>
+{% endblock %}
+{% block scripts %}<script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.min.js"></script>{% endblock %}

@@ -1,0 +1,21 @@
+{% extends "base.html" %}
+{% block content %}
+<div class="grid2">
+  <div class="panel">
+    <h3>Scan ID card</h3>
+    <div id="reader"></div>
+    <div class="row">
+      <button class="btn primary" id="startBtn">📷 Scan ID Card</button>
+      <button class="btn" id="stopBtn" style="display:none">Stop camera</button>
+    </div>
+    <p class="muted small">The camera needs HTTPS or localhost. If it does not work, type the ID below.</p>
+    <h3>Manual entry</h3>
+    <form id="manualForm" class="row">
+      <input id="manualId" placeholder="Student ID e.g. CSE101" required>
+      <button class="btn">Find</button>
+    </form>
+  </div>
+  <div class="panel" id="result"><h3>Student details</h3><p class="muted">Scan a card or enter an ID to see details.</p></div>
+</div>
+{% endblock %}
+{% block scripts %}<script src="https://unpkg.com/html5-qrcode@2.3.8/html5-qrcode.min.js"></script>{% endblock %}

@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Login | Smart Attendance Tracker</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body data-page="login" class="login-body">
+  <div class="login-card">
+    <div class="brand dark">🎓 Smart Attendance Tracker</div>
+    <p class="muted">Sign in to manage attendance</p>
+    <form id="loginForm">
+      <label>Username or email</label>
+      <input id="username" autocomplete="username" required>
+      <label>Password</label>
+      <input id="password" type="password" autocomplete="current-password" required>
+      <button class="btn primary full">Login</button>
+    </form>
+    <p class="muted small">Demo login: <b>admin</b> / <b>admin123</b></p>
+  </div>
+  <div id="toast"></div>
+  <script src="{{ url_for('static', filename='js/app.js') }}"></script>
+</body>
+</html>
